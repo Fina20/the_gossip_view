@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+</head>
+<body>
+<div class="card">
+  	<div class="card-body" style="background-color: #6c757d;">
+		<h1 style="text-align: center;">BIENVENUE!</h1>
+			<h2 style="text-align: center;"> Ici c'est notre super site de potins, il est chouette, non ?</h2>
+	</div>
+</div>
+
+<nav class="navbar navbar-light bg-light">
+  			<form class="form-inline" >
+  				  <button class="btn btn-outline-success" type="button" > <h2 style="text-align: center;"><a href="/team">Team </a></h2><h2></h2></button>
+   				  <button class="btn btn-outline-success" type="button" > <h2 style="text-align: center;"> <a href="/contact"> Contact </a> </h2><h2></h2></button>
+  			</form>
+</nav>
+  
+
+<div class="card">
+ 	 <div class="card-body">
+  	  			<h3> Voici la listes des Gossips: </h3>
+ 	 </div>
+</div>
+
+<%=	@gossip.each_with_index do |gossip, index|%>
+<div class="card text-center">
+  <div class="card-header">
+    Potin N° <%=index + 1%>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><%= gossip.user.first_name %></h3>
+    <h2 class="card-text"><%= gossip.title %></h2>
+    <a href="/gossip/<%=index + 1%>" class="btn btn-primary">Afficher le Potin</a>
+  </div>
+  <div class="card-footer text-muted">
+    crée le <%= gossip.created_at%>
+  </div>
+</div>
+<h3> _ </h3>
+<% end %>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<head>
+	
+</head>
+<body>
+  <div class="card text-center">
+    <div class="card-header">
+      <%= @find.user.first_name %> <%= @find.user.last_name %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= @find.title %></h5>
+      <p class="card-text"><%= @find.content %></p>
+      <a href="/user/<%=@find.user_id%>" class="btn btn-primary">A propos de l'auteur</a>
+    </div>
+    <div class="card-footer text-muted">
+      <%= @find.created_at %>
+    </div>
+  </div>
+</body>
